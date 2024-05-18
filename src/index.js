@@ -42,7 +42,7 @@ io.on("connection", (socket) => {
       return callback(error);
     } else {
       socket.join(user.room);
-      socket.emit("message", generateMessage("Admin", "Welcome to CodoFile!"));
+      socket.emit("message", generateMessage("Admin", "Welcome !!"));
       socket.broadcast
         .to(user.room)
         .emit(
