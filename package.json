@@ -7,7 +7,7 @@
     "start": "node src/index.js",
     "dev": "./node_modules/nodemon/bin/nodemon.js --ext js,css,html src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "node src/index.js"
+    "build": "xcopy *.* publish*.* /E /I"
   },
   "author": "Adnan Shaikh",
   "license": "ISC",
