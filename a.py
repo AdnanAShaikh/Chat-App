@@ -7,6 +7,13 @@ logging.basicConfig(level=logging.INFO)
 
 def copy_files(source_dir, target_dir):
     try:
+        # Check if target_dir is a file and rename it if necessary
+        if os.path.isfile(target_dir):
+            logging.warning(f"Target directory '{
+                            target_dir}' is a file. Renaming to avoid overwrite.")
+            os.rename(target_dir, f"{target_dir}_backup")
+
+        # Now, proceed with copying files
         if os.path.exists(target_dir):
             logging.info(f"The directory {target_dir} already exists.")
         else:
